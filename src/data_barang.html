@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="description" content="Responsive admin dashboard and web application ui kit. "> -->
+    <meta name="keywords" content="blank, starter">
+
+    <title>Ayam Nelongso - Admin</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="assets/css/core.min.css" rel="stylesheet">
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.png">
+  </head>
+
+  <body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="spinner-dots">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+      </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+      <header class="sidebar-header">
+        <span class="logo">
+          <a href="../index.html">
+            <span style="font-weight: 100">Nelongso</span>Admin</a>
+        </span>
+        <span class="sidebar-toggle-fold" style="margin-right: 15px"></span>
+      </header>
+    
+      <nav class="sidebar-navigation">
+        <ul class="menu">
+    
+          <li class="menu-item active">
+            <a class="menu-link" href="../dashboard/general.html">
+              <span class="icon fa fa-home"></span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="data_barang.html">
+              <span class="icon fa fa-bars"></span>
+              <span class="title">Manajemen Barang</span>
+            </a>
+    
+            <ul class="menu-submenu">
+              <li class="menu-item">
+                <a class="menu-link" href="data_barang.html">
+                  <span class="icon fa fa-bars"></span>
+                  <span class="title">Data Barang</span>
+                </a>
+              </li>
+    
+              <li class="menu-item">
+                <a class="menu-link" href="data_barang.html" target="_blank">
+                  <span class="dot"></span>
+                  <span class="title">Tambah Barang</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+    
+        </ul>
+      </nav>
+      <footer class="" style="background-color: #926dde">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center text-white" style="margin-bottom:0">Copyright © 2018</p>
+          </div>
+        </div>
+      </footer>
+    </aside>
+    <!-- END Sidebar -->
+
+
+    <!-- Topbar -->
+    <header class="topbar justify-center">
+      <div class="text-center">
+        <h1 style="margin-bottom:0">Data Barang</h1>
+      </div>
+    </header>
+    <!-- END Topbar -->
+
+
+    <!-- Main container -->
+    <main class="main-container" id="app">
+      <div class="main-content">
+        <div class="">
+          <div class="card">
+            <h4 class="card-title">
+              <strong>Data Barang</strong>
+            </h4>
+        
+            <div class="card-body">
+        
+              <div class="flexbox mb-20">
+                <div class="lookup">
+                  <input class="w-200px" type="text" name="s" placeholder="Search">
+                </div>
+        
+                <div class="btn-toolbar">
+                  <div class="btn-group btn-group-sm">
+                    <button class="btn" title="Add new" data-provide="tooltip">
+                      <i class="ion-plus-round"></i> Tambah Barang Baru
+                    </button>
+                  </div>
+                </div>
+              </div>
+        
+        
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Kode Barang</th>
+                    <th>Nama Barang</th>
+                    <th>Terakhir diperbarui</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td class=" table-actions">
+                      <a class="table-action hover-primary" href="#">
+                        <i class="ti-pencil"></i>
+                      </a>
+                      <a class="table-action hover-danger" href="#">
+                        <i class="ti-trash"></i>
+                      </a>
+                      <div class="dropdown table-action">
+                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
+                          <i class="ti-more-alt rotate-90"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-menu-alt"></i> Details</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-clip"></i> Add file</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-bar-chart"></i> Performance</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td class=" table-actions">
+                      <a class="table-action hover-primary" href="#">
+                        <i class="ti-pencil"></i>
+                      </a>
+                      <a class="table-action hover-danger" href="#">
+                        <i class="ti-trash"></i>
+                      </a>
+                      <div class="dropdown table-action">
+                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
+                          <i class="ti-more-alt rotate-90"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-menu-alt"></i> Details</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-clip"></i> Add file</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-bar-chart"></i> Performance</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td class=" table-actions">
+                      <a class="table-action hover-primary" href="#">
+                        <i class="ti-pencil"></i>
+                      </a>
+                      <a class="table-action hover-danger" href="#">
+                        <i class="ti-trash"></i>
+                      </a>
+                      <div class="dropdown table-action">
+                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
+                          <i class="ti-more-alt rotate-90"></i>
+                        </span>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-menu-alt"></i> Details</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-clip"></i> Add file</a>
+                          <a class="dropdown-item" href="#">
+                            <i class="ti-bar-chart"></i> Performance</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+        </div>
+
+
+      </div><!--/.main-content -->
+    </main>
+    <!-- END Main container -->
+
+
+
+    <!-- Global quickview -->
+    <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+      <div class="spinner-linear">
+        <div class="line"></div>
+      </div>
+    </div>
+    <!-- END Global quickview -->
+
+
+
+    <!-- Scripts -->
+    <script src="assets/js/core.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/vendor/vuejs/vue.js"></script>
+    <script>
+      new Vue({
+        el:'#app',
+        data :{
+          utama:'budanto'
+        },
+        mounted:function(){
+          this.getData();
+        },
+        methods:{
+          getData(){
+            app.ready(function () {
+              $('#chat-content').scrollToEnd();
+              var chartjs2 = new Chart($("#chart-js-2"), {
+                type: 'line',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "rgb(51,202,185)",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+              var chartjs3 = new Chart($("#chart-js-3"), {
+                type: 'bar',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "#90CAF9",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+              var chartjs4 = new Chart($("#chart-js-4"), {
+                type: 'line',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "#FFCDD2",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.flex-container{
+  display: flex
+}
+.flex-container.column{
+  flex-flow: column
+}
+.card-ex{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  font-size: 20px;
+  z-index: 2;
+}
+.card-ex .fw-400{
+  margin-bottom: 15px;
+  display: block
+}
+.justify-center{
+  justify-content: center
+}
+.icon-dash{
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  font-size: 100px;
+  color: #E0E0E0;
+  z-index: -1;
+}

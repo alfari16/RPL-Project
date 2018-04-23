@@ -13,8 +13,8 @@
 
     <!-- Styles -->
     <link href="assets/css/core.min.css" rel="stylesheet">
-    <link href="assets/css/app.css" rel="stylesheet">
-    <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -39,7 +39,7 @@
         <span class="logo">
           <a href="../index.html"><span style="font-weight: 100">Nelongso</span>Admin</a>
         </span>
-        <span class="sidebar-toggle-fold"></span>
+        <span class="sidebar-toggle-fold" style="margin-right: 15px"></span>
       </header>
 
       <nav class="sidebar-navigation">
@@ -52,10 +52,26 @@
             </a>
           </li>
           <li class="menu-item">
-            <a class="menu-link" href="../dashboard/general.html">
+            <a class="menu-link" href="data_barang.html">
               <span class="icon fa fa-bars"></span>
-              <span class="title">Data Barang</span>
+              <span class="title">Manajemen Barang</span>
             </a>
+          
+            <ul class="menu-submenu">
+              <li class="menu-item">
+                <a class="menu-link" href="data_barang.html">
+                  <span class="icon fa fa-bars"></span>
+                  <span class="title">Data Barang</span>
+                </a>
+              </li>
+          
+              <li class="menu-item">
+                <a class="menu-link" href="data_barang.html" target="_blank">
+                  <span class="dot"></span>
+                  <span class="title">Tambah Barang</span>
+                </a>
+              </li>
+            </ul>
           </li>
 
         </ul>
@@ -72,142 +88,31 @@
 
 
     <!-- Topbar -->
-    <header class="topbar">
-      <div class="topbar-left">
-        <span class="topbar-btn sidebar-toggler"><i>&#9776;</i></span>
-      </div>
-      <div class="text-left">
+    <header class="topbar justify-center">
+      <div class="text-center">
         <h1 style="margin-bottom:0">Dashboard</h1>
-      </div>
-      <div class="topbar-right">
-        <ul class="topbar-btns">
-
-          <!-- Notifications -->
-          <li class="dropdown d-none d-md-block">
-            <span class="topbar-btn has-new" data-toggle="dropdown"><i class="ti-bell"></i></span>
-            <div class="dropdown-menu dropdown-menu-right">
-
-              <div class="media-list media-list-hover media-list-divided media-list-xs">
-                <a class="media media-new" href="#">
-                  <span class="avatar bg-success"><i class="ti-user"></i></span>
-                  <div class="media-body">
-                    <p>New user registered</p>
-                    <time datetime="2017-07-14 20:00">Just now</time>
-                  </div>
-                </a>
-
-                <a class="media" href="#">
-                  <span class="avatar bg-info"><i class="ti-shopping-cart"></i></span>
-                  <div class="media-body">
-                    <p>New order received</p>
-                    <time datetime="2017-07-14 20:00">2 min ago</time>
-                  </div>
-                </a>
-
-                <a class="media" href="#">
-                  <span class="avatar bg-warning"><i class="ti-face-sad"></i></span>
-                  <div class="media-body">
-                    <p>Refund request from <b>Ashlyn Culotta</b></p>
-                    <time datetime="2017-07-14 20:00">24 min ago</time>
-                  </div>
-                </a>
-
-                <a class="media" href="#">
-                  <span class="avatar bg-primary"><i class="ti-money"></i></span>
-                  <div class="media-body">
-                    <p>New payment has made through PayPal</p>
-                    <time datetime="2017-07-14 20:00">53 min ago</time>
-                  </div>
-                </a>
-              </div>
-
-              <div class="dropdown-footer">
-                <div class="left">
-                  <a href="#">Read all notifications</a>
-                </div>
-
-                <div class="right">
-                  <a href="#" data-provide="tooltip" title="Mark all as read"><i class="fa fa-circle-o"></i></a>
-                  <a href="#" data-provide="tooltip" title="Update"><i class="fa fa-repeat"></i></a>
-                  <a href="#" data-provide="tooltip" title="Settings"><i class="fa fa-gear"></i></a>
-                </div>
-              </div>
-
-            </div>
-          </li>
-          <!-- END Notifications -->
-
-        </ul>
-
       </div>
     </header>
     <!-- END Topbar -->
 
 
     <!-- Main container -->
-    <main class="main-container">
+    <main class="main-container" id="app">
       <div class="main-content">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <div class="relative">
-                <!-- <i class="fa fa-bars absolute"></i> -->
-                <div class="text-right">
-                  <span class="fw-400">Total Persediaan Barang</span>
-                  <br>
-                  <span>
-                    <i class="ti-angle-up text-success"></i>
-                    <span class="fs-18 ml-1">113</span>
-                  </span>
-                </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">
+                  <strong>Pengeluaran</strong>
+                </h5>
+              </div>
+              <div class="card-body">
+                <canvas id="chart-js-2" height="100px" data-provide="chartjs"></canvas>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-body">
-              <div class="relative">
-                <!-- <i class="fa fa-money absolute"></i> -->
-                <div class="text-right">
-                  <span class="fw-400">Anggaran</span>
-                  <br>
-                  <span>
-                    <i class="ti-angle-up text-success"></i>
-                    <span class="fs-18 ml-1">113</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-body">
-              <div class="relative">
-                <!-- <i class="fa fa-bars absolute"></i> -->
-                <div class="text-right">
-                  <span class="fw-400">Jenis Barang</span>
-                  <br>
-                  <span>
-                    <i class="ti-angle-up text-success"></i>
-                    <span class="fs-18 ml-1">113</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="row flex-container">
-              <div class="col-md-8">
-                <div class="card" style="height: 100%;">
-                  <div class="card-header">
-                    <h5 class="card-title">
-                      <strong>Pengeluaran</strong>
-                    </h5>
-                  </div>
-                  <div class="card-body">
-                    <canvas id="chart-js-2" data-provide="chartjs"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 flex-container column">
+            <div class="row">
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-header">
                     <h5 class="card-title">
@@ -218,6 +123,8 @@
                     <canvas id="chart-js-3" data-provide="chartjs"></canvas>
                   </div>
                 </div>
+              </div>
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-header">
                     <h5 class="card-title">
@@ -227,6 +134,44 @@
                   <div class="card-body">
                     <canvas id="chart-js-4" data-provide="chartjs"></canvas>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-body card-ex">
+              <i class="icon-dash fa fa-bars absolute"></i>
+              <div>
+                <div class="text-right">
+                  <span class="fw-400">Total Persediaan Barang</span>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card card-body card-ex">
+              <i class="icon-dash fa fa-money absolute"></i>
+              <div>
+                <div class="text-right">
+                  <span class="fw-400">Anggaran</span>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card card-body card-ex">
+              <i class="icon-dash fa fa-braille absolute"></i>
+              <div>
+                <div class="text-right">
+                  <span class="fw-400">Jenis Barang</span>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -253,51 +198,62 @@
     <!-- Scripts -->
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/app.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="assets/vendor/vuejs/vue.js"></script>
     <script>
-      app.ready(function () {
-        $('#chat-content').scrollToEnd();
-        var chartjs2 = new Chart($("#chart-js-2"), {
-          type: 'line',
-          data: {
-            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-            datasets: [
-              {
-                label: "Barang Masuk",
-                backgroundColor: "rgb(51,202,185)",
-                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-              },
-            ]
-          },
-        });
-        var chartjs3 = new Chart($("#chart-js-3"), {
-          type: 'bar',
-          data: {
-            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-            datasets: [
-              {
-                label: "Barang Masuk",
-                backgroundColor: "rgb(51,202,185)",
-                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-              },
-            ]
-          },
-        });
-        var chartjs4 = new Chart($("#chart-js-4"), {
-          type: 'line',
-          data: {
-            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-            datasets: [
-              {
-                label: "Barang Masuk",
-                backgroundColor: "rgb(51,202,185)",
-                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-              },
-            ]
-          },
-        });
-
-
+      new Vue({
+        el:'#app',
+        data :{
+          utama:'budanto'
+        },
+        mounted:function(){
+          this.getData();
+        },
+        methods:{
+          getData(){
+            app.ready(function () {
+              $('#chat-content').scrollToEnd();
+              var chartjs2 = new Chart($("#chart-js-2"), {
+                type: 'line',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "rgb(51,202,185)",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+              var chartjs3 = new Chart($("#chart-js-3"), {
+                type: 'bar',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "#90CAF9",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+              var chartjs4 = new Chart($("#chart-js-4"), {
+                type: 'line',
+                data: {
+                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                  datasets: [
+                    {
+                      label: "Barang Masuk",
+                      backgroundColor: "#FFCDD2",
+                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    },
+                  ]
+                },
+              });
+            });
+          }
+        }
       });
     </script>
   </body>
