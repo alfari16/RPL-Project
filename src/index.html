@@ -13,7 +13,7 @@
 
     <!-- Styles -->
     <link href="assets/css/core.min.css" rel="stylesheet">
-    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
     <link href="assets/css/style.min.css" rel="stylesheet">
 
     <!-- Favicons -->
@@ -36,88 +36,31 @@
     <!-- Sidebar -->
     <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
       <header class="sidebar-header">
-        <a class="logo-icon" href="../index.html"><img src="assets/img/logo-icon-light.png" alt="logo icon"></a>
         <span class="logo">
-          <a href="../index.html"><img src="assets/img/logo-light.png" alt="logo"></a>
+          <a href="../index.html"><span style="font-weight: 100">Nelongso</span>Admin</a>
         </span>
         <span class="sidebar-toggle-fold"></span>
       </header>
 
       <nav class="sidebar-navigation">
         <ul class="menu">
-
-          <!-- <li class="menu-category">Category 1</li> -->
-
-          <li class="menu-item active">
-            <a class="menu-link" href="../dashboard/general.html">
+          
+          <li class="menu-item active" >
+          <a class="menu-link" href="../dashboard/general.html">
               <span class="icon fa fa-home"></span>
               <span class="title">Dashboard</span>
             </a>
           </li>
-
-          <!-- <li class="menu-item">
-            <a class="menu-link" href="#">
-              <span class="icon fa fa-user"></span>
-              <span class="title">Users</span>
-              <span class="arrow"></span>
-            </a>
-
-            <ul class="menu-submenu">
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Moderators</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Customers</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-
-
-          <li class="menu-category">Category 2</li>
-
-
           <li class="menu-item">
-            <a class="menu-link" href="#">
-              <span class="icon ti-layout"></span>
-              <span class="title">Layout</span>
-              <span class="arrow"></span>
+            <a class="menu-link" href="../dashboard/general.html">
+              <span class="icon fa fa-bars"></span>
+              <span class="title">Data Barang</span>
             </a>
-
-            <ul class="menu-submenu">
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Sidebar</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Header</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="#">
-                  <span class="dot"></span>
-                  <span class="title">Footer</span>
-                </a>
-              </li>
-            </ul>
-          </li> -->
+          </li>
 
         </ul>
       </nav>
-<footer class="" style="background-color: #33cabb">
+<footer class="" style="background-color: #926dde">
   <div class="row">
     <div class="col-md-12">
       <p class="text-center text-white" style="margin-bottom:0">Copyright © 2018</p>
@@ -204,13 +147,89 @@
     <!-- Main container -->
     <main class="main-container">
       <div class="main-content">
-
-
-        <div class="card">
-          <h4 class="card-title">Chart Penjualan</h4>
-
-          <div class="card-body">
-
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-body">
+              <div class="relative">
+                <!-- <i class="fa fa-bars absolute"></i> -->
+                <div class="text-right">
+                  <span class="fw-400">Total Persediaan Barang</span>
+                  <br>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-body">
+              <div class="relative">
+                <!-- <i class="fa fa-money absolute"></i> -->
+                <div class="text-right">
+                  <span class="fw-400">Anggaran</span>
+                  <br>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-body">
+              <div class="relative">
+                <!-- <i class="fa fa-bars absolute"></i> -->
+                <div class="text-right">
+                  <span class="fw-400">Jenis Barang</span>
+                  <br>
+                  <span>
+                    <i class="ti-angle-up text-success"></i>
+                    <span class="fs-18 ml-1">113</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row flex-container">
+              <div class="col-md-8">
+                <div class="card" style="height: 100%;">
+                  <div class="card-header">
+                    <h5 class="card-title">
+                      <strong>Pengeluaran</strong>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="chart-js-2" data-provide="chartjs"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 flex-container column">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">
+                      <strong>Pengeluaran</strong>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="chart-js-3" data-provide="chartjs"></canvas>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">
+                      <strong>Pengeluaran</strong>
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="chart-js-4" data-provide="chartjs"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -235,6 +254,51 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/app.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script>
+      app.ready(function () {
+        $('#chat-content').scrollToEnd();
+        var chartjs2 = new Chart($("#chart-js-2"), {
+          type: 'line',
+          data: {
+            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+            datasets: [
+              {
+                label: "Barang Masuk",
+                backgroundColor: "rgb(51,202,185)",
+                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+              },
+            ]
+          },
+        });
+        var chartjs3 = new Chart($("#chart-js-3"), {
+          type: 'bar',
+          data: {
+            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+            datasets: [
+              {
+                label: "Barang Masuk",
+                backgroundColor: "rgb(51,202,185)",
+                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+              },
+            ]
+          },
+        });
+        var chartjs4 = new Chart($("#chart-js-4"), {
+          type: 'line',
+          data: {
+            labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+            datasets: [
+              {
+                label: "Barang Masuk",
+                backgroundColor: "rgb(51,202,185)",
+                data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+              },
+            ]
+          },
+        });
 
+
+      });
+    </script>
   </body>
 </html>

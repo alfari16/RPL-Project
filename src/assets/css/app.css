@@ -23519,3 +23519,12 @@ a.text-danger:hover, a.text-danger:focus {
 .align-sub {
   vertical-align: sub;
 }
+
+/* my own css */
+
+.flex-container{
+  display: flex
+}
+.flex-container.column{
+  flex-flow: column
+}
