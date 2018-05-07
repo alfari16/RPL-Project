@@ -6,7 +6,7 @@
     <!-- <meta name="description" content="Responsive admin dashboard and web application ui kit. "> -->
     <meta name="keywords" content="blank, starter">
 
-    <title>Ayam Nelongso - Admin</title>
+    <title>Data Barang - Ayam Nelongso</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
@@ -45,7 +45,7 @@
     
       <nav class="sidebar-navigation">
         <ul class="menu">
-    
+        
           <li class="menu-item">
             <a class="menu-link" href="index.html">
               <span class="icon fa fa-home"></span>
@@ -53,37 +53,35 @@
             </a>
           </li>
           <li class="menu-item active">
-            <a class="menu-link" href="data_barang.html">
+            <a class="menu-link" href="#">
               <span class="icon fa fa-bars"></span>
               <span class="title">Manajemen Barang</span>
             </a>
-    
+        
             <ul class="menu-submenu">
               <li class="menu-item">
-                <a class="menu-link" href="data_barang.html">
+                <a class="menu-link" href="data_barang.html" target="_self">
                   <span class="icon fa fa-bars"></span>
-                  <span class="title">Data Barang</span>
+                  <span class="title">Manajemen Barang</span>
                 </a>
               </li>
-    
+        
               <li class="menu-item">
-                <a class="menu-link" href="data_barang.html" target="_blank">
+                <a class="menu-link" href="data_barang.html#tambah-barang">
                   <span class="dot"></span>
                   <span class="title">Tambah Barang</span>
                 </a>
               </li>
             </ul>
           </li>
-    
+          <li class="menu-item">
+            <a class="menu-link" href="log.html">
+              <span class="icon fa fa-home"></span>
+              <span class="title">Log Aktivitas</span>
+            </a>
+          </li>
         </ul>
       </nav>
-      <footer class="" style="background-color: #926dde">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="text-center text-white" style="margin-bottom:0">Copyright © 2018</p>
-          </div>
-        </div>
-      </footer>
     </aside>
     <!-- END Sidebar -->
 
@@ -110,12 +108,12 @@
         
               <div class="flexbox mb-20">
                 <div class="lookup">
-                  <input class="w-200px" type="text" name="s" placeholder="Search">
+                  <input class="w-200px" type="text" name="s" placeholder="Cari" id="cari-input">
                 </div>
         
                 <div class="btn-toolbar">
                   <div class="btn-group btn-group-sm">
-                    <button class="btn" title="Add new" data-provide="tooltip">
+                    <button class="btn" title="Add new" id="tambah-barang" data-provide="tooltip" data-toggle="modal" data-target="#modal-large">
                       <i class="ion-plus-round"></i> Tambah Barang Baru
                     </button>
                   </div>
@@ -129,90 +127,59 @@
                     <th>#</th>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
                     <th>Terakhir diperbarui</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>AS476</td>
-                    <td>Daging Ayam Super</td>
+                    <td scope="row">1</td>
+                    <td class="td-kode-barang">AS476</td>
+                    <td class="td-nama-barang">Daging Ayam Super</td>
+                    <td class="td-harga-barang">24,000</td>
+                    <td class="td-jumlah-barang">240</td>
                     <td>12 April 2018</td>
                     <td class=" table-actions">
-                      <a class="table-action hover-primary" href="#">
+                      <a class="table-action" href="#" title="Kelola" data-toggle="modal" data-target="#modal-edit">
                         <i class="ti-pencil"></i>
                       </a>
-                      <a class="table-action hover-danger" href="#">
+                      <a class="table-action" href="#" title="Hapus" data-toggle="modal" data-target="#delete-modal">
                         <i class="ti-trash"></i>
                       </a>
-                      <div class="dropdown table-action">
-                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
-                          <i class="ti-more-alt rotate-90"></i>
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-menu-alt"></i> Details</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-clip"></i> Add file</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-bar-chart"></i> Performance</a>
-                        </div>
-                      </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
-                    <td>R672</td>
-                    <td>Rempah-rempah</td>
+                    <td scope="row">2</td>
+                    <td class="td-kode-barang">R672</td>
+                    <td class="td-nama-barang">Rempah-rempah</td>
+                    <td class="td-harga-barang">24,000</td>
+                    <td class="td-jumlah-barang">240</td>
                     <td>21 Maret 2018</td>
                     <td class=" table-actions">
-                      <a class="table-action hover-primary" href="#">
+                      <a class="table-action" href="#" title="Kelola" data-toggle="modal" data-target="#modal-edit">
                         <i class="ti-pencil"></i>
                       </a>
-                      <a class="table-action hover-danger" href="#">
+                      <a class="table-action" href="#" title="Hapus">
                         <i class="ti-trash"></i>
                       </a>
-                      <div class="dropdown table-action">
-                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
-                          <i class="ti-more-alt rotate-90"></i>
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-menu-alt"></i> Details</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-clip"></i> Add file</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-bar-chart"></i> Performance</a>
-                        </div>
-                      </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
-                    <td>B782</td>
-                    <td>Bawang</td>
+                    <td scope="row">3</td>
+                    <td class="td-kode-barang">B782</td>
+                    <td class="td-nama-barang">Bawang</td>
+                    <td class="td-harga-barang">24,000</td>
+                    <td class="td-jumlah-barang">240</td>
                     <td>25 April 2018</td>
                     <td class=" table-actions">
-                      <a class="table-action hover-primary" href="#">
+                      <a class="table-action" href="#" title="Kelola" data-toggle="modal" data-target="#modal-edit">
                         <i class="ti-pencil"></i>
                       </a>
-                      <a class="table-action hover-danger" href="#">
+                      <a class="table-action" href="#" title="Hapus">
                         <i class="ti-trash"></i>
                       </a>
-                      <div class="dropdown table-action">
-                        <span class="dropdown-toggle no-caret hover-primary" data-toggle="dropdown">
-                          <i class="ti-more-alt rotate-90"></i>
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-menu-alt"></i> Details</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-clip"></i> Add file</a>
-                          <a class="dropdown-item" href="#">
-                            <i class="ti-bar-chart"></i> Performance</a>
-                        </div>
-                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -237,67 +204,182 @@
     </div>
     <!-- END Global quickview -->
 
+    <!-- Modal Tambah Barang Start -->
+    <div class="modal fade" id="modal-large" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Tambah Barang</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form data-provide="validation" data-disable="false">
+            <div class="modal-body">
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-1">Kode Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control" id="input-1" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-2">Nama Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control" id="input-2" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-2">Jumlah Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control currency" id="input-4" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input3">Harga Barang</label>
+                <div class="col-8 col-lg-10 flex-container align-center">
+                  <p class="floating-left no-space mr-3">Rp</p>
+                  <input type="text" class="form-control currency" id="input3" required placeholder="">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>        
+            <div class="modal-footer">
+              <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Batal</button>
+              <button class="btn btn-primary" type="submit">Tambah</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Tambah Barang End -->
+
+    <!-- Modal Edit Barang Start -->
+    <div class="modal fade" id="modal-edit" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Edit Barang</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form data-provide="validation" data-disable="false">
+            <div class="modal-body">
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-1">Kode Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control kode-barang" id="input-1" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-2">Nama Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control nama-barang" id="input-2" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input-2">Jumlah Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="text" class="form-control jumlah-barang currency" id="input-4" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require" for="input3">Harga Barang</label>
+                <div class="col-8 col-lg-10 flex-container align-center">
+                  <p class="floating-left no-space mr-3">Rp</p>
+                  <input type="text" class="form-control harga-barang currency" id="input3" required placeholder="">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Batal</button>
+              <button class="btn btn-primary" type="submit">Edit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Edit Barang End -->
+
+    <!-- Modal Action Delete Start-->
+    <div class="modal fade" id="delete-modal" tabindex="-1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Apakah Anda Yakin?</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" value="" id="input-delete">
+            <p>Hapus 
+              <span class="kode-barang">Blablabla</span> -
+              <span class="nama-barang">Blablabla</span>
+              (<span class="jumlah-barang">Blablabla</span> pcs)
+              ?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-bold btn-pure btn-primary">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Action Delete End-->
 
 
     <!-- Scripts -->
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/app.min.js"></script>
-    <script src="assets/vendor/vuejs/vue.js"></script>
     <script>
-      new Vue({
-        el:'#app',
-        data :{
-          utama:'budanto'
-        },
-        mounted:function(){
-          this.getData();
-        },
-        methods:{
-          getData(){
-            app.ready(function () {
-              $('#chat-content').scrollToEnd();
-              var chartjs2 = new Chart($("#chart-js-2"), {
-                type: 'line',
-                data: {
-                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-                  datasets: [
-                    {
-                      label: "Barang Masuk",
-                      backgroundColor: "rgb(51,202,185)",
-                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-                    },
-                  ]
-                },
-              });
-              var chartjs3 = new Chart($("#chart-js-3"), {
-                type: 'bar',
-                data: {
-                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-                  datasets: [
-                    {
-                      label: "Barang Masuk",
-                      backgroundColor: "#90CAF9",
-                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-                    },
-                  ]
-                },
-              });
-              var chartjs4 = new Chart($("#chart-js-4"), {
-                type: 'line',
-                data: {
-                  labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
-                  datasets: [
-                    {
-                      label: "Barang Masuk",
-                      backgroundColor: "#FFCDD2",
-                      data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
-                    },
-                  ]
-                },
-              });
-            });
+      $('.currency').keypress(function(e){
+        if(e.which<48||e.which>57) e.preventDefault();
+        var value = $(this).val().split('').filter(function (el) { return el !== ',' }).reverse();
+        var temp = '';
+        value.forEach((element,idx) => {
+          if((idx+1)%3==0 && idx>0) temp+=',';
+          temp+=element;
+        });
+        $(this).val(temp.split('').reverse().join(''));
+      });
+      if(location.hash==='#tambah-barang'){
+        $('#tambah-barang').click();
+      }
+      $('[data-target="#delete-modal"]').click(function(e){
+        var data = $(this).closest('tr');
+        var modal = $('#delete-modal');
+        modal.find('.kode-barang').text(data.find('.td-kode-barang').text());
+        modal.find('.nama-barang').text(data.find('.td-nama-barang').text());
+        modal.find('.jumlah-barang').text(data.find('.td-jumlah-barang').text());
+      });
+      $('[data-target="#modal-edit"]').click(function(e){
+        var data = $(this).closest('tr');
+        var modal = $('#modal-edit');
+        modal.find('.kode-barang').val(data.find('.td-kode-barang').text());
+        modal.find('.nama-barang').val(data.find('.td-nama-barang').text());
+        modal.find('.jumlah-barang').val(data.find('.td-jumlah-barang').text());
+        modal.find('.harga-barang').val(data.find('.td-harga-barang').text());
+      });
+      $('#cari-input').keyup(function(e){
+        var value = $(this).val().toLowerCase();
+        $('table tbody').children('tr').each(function(idx,val){
+          var $this=$(this);
+          function pencarian(arg){
+            return $this.find(arg).text().toLowerCase().indexOf(value)>=0;
           }
-        }
+          if(pencarian('.td-kode-barang') || pencarian('.td-nama-barang') || pencarian('.td-harga-barang')){
+            $this.show();
+          }else $this.hide();
+        });
       });
     </script>
   </body>
