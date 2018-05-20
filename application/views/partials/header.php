@@ -115,4 +115,5 @@
                 }
             });
             if(index) $('.menu-item.root').eq(0).addClass('active');
+            //test
         </script>
