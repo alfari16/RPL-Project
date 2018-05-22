@@ -54,6 +54,7 @@ class UserController extends CI_Controller
             if($getUsername){
                 redirect(base_url('/register?telah=dipakai'));
             }else{
+                $input['password'] = md5($input['password']);
                 if($this->user->addUser($input)){
                     redirect(base_url('index.php?sukses=tambahuser'));
                 }
