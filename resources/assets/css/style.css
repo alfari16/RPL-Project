@@ -1,0 +1,81 @@
+.flex-container{
+  display: flex
+}
+.flex-container.column{
+  flex-flow: column
+}
+.card-ex{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  font-size: 20px;
+  z-index: 2;
+}
+.card-ex .fw-400{
+  margin-bottom: 15px;
+  display: block
+}
+.justify-center{
+  justify-content: center
+}
+.align-center{
+  align-items: center
+}
+.icon-dash{
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  font-size: 100px;
+  color: #E0E0E0;
+  z-index: -1;
+}
+.no-space{
+  margin: 0;
+  padding: 0
+}
+.mr-3{
+  margin-right: 10px
+}
+.ml-3{
+  margin-left: 10px
+}
+.mt-3{
+  margin-top: 10px
+}
+.mb-3{
+  margin-bottom: 10px
+}
+.login-wrapper{
+  min-height: 100vh
+}
+.login{
+  max-width: 100%;
+  width: 400px
+}
+.login .form-control{
+  margin-bottom: 10px;
+  height: 60px;
+}
+.btn-login{
+  color: white
+}
+.branding{
+  font-size: 20px;
+}
+.branding span{
+  font-weight: 700;
+  color: #888
+}
+.spacer{
+  flex: 1
+}
+.menu-nav-drawer{
+  flex-flow: column wrap;
+  height: 100%;
+}
+.menu-nav-drawer .btn{
+  border: none;
+  color: white;
+  border-radius: 0;
+  padding: 10px 0
+}
