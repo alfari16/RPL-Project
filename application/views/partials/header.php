@@ -98,7 +98,7 @@
                     </li>
                     <li class="menu-item root">
                         <a class="menu-link" href="<?php echo base_url('register') ?>">
-                            <span class="icon fa fa-home">
+                            <span class="icon fa fa-user">
                             </span>
                             <span class="title">
                                 Tambah Admin
