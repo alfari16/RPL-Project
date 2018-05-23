@@ -8,6 +8,7 @@ $route['manajemen-barang'] = 'BarangController';
 $route['login']['get'] = 'UserController/login';
 $route['login']['post'] = 'UserController/setlogin';
 $route['logout'] = 'UserController/logout';
+$route['log-aktivitas'] = 'ActivityController';
 $route['register'] = 'UserController/register';
 
 

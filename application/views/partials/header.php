@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                     <li class="menu-item root">
-                        <a class="menu-link" href="log.html">
+                        <a class="menu-link" href="<?php echo base_url('log-aktivitas') ?>">
                             <span class="icon fa fa-home">
                             </span>
                             <span class="title">

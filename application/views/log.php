@@ -6,19 +6,18 @@
     <!-- <meta name="description" content="Responsive admin dashboard and web application ui kit. "> -->
     <meta name="keywords" content="blank, starter">
 
-    <title>Ayam Nelongso - Admin</title>
+    <title>Log Aktivitas - Ayam Nelongso Admin</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="assets/css/core.min.css" rel="stylesheet">
-    <link href="assets/css/app.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-
+    <link href="<?php echo base_url('resources/');?>assets/css/core.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('resources/');?>assets/css/app.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('resources/');?>assets/css/style.css" rel="stylesheet">
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" href="assets/img/favicon.png">
+    <link href="<?php echo base_url('resources/');?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?php echo base_url('resources/');?>assets/img/favicon.png" rel="icon">
+    <script src="<?php echo base_url('resources/');?>assets/js/core.min.js"></script>
   </head>
 
   <body>
@@ -166,7 +165,6 @@
 
 
     <!-- Scripts -->
-    <script src="assets/js/core.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
+    <script src="<?php echo base_url('resources/assets/js/app.min.js') ?>"></script>
   </body>
 </html>
