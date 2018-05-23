@@ -107,10 +107,9 @@ class BarangController extends CI_Controller
         $this->load->library('curl');
         $param = array(
             'kode'=> $this->input->post('kode_barang'),
-            'nama'=> $this->input->post('nama_barang'),
-            'satuan'=> $this->input->post('satuan')
+            'harga'=> $this->input->post('harga_barang')
         );
-        return $this->curl->simple_post(ENDPOINT.'add_barang', $param, array(CURLOPT_BUFFERSIZE => 10)); 
+        return $this->curl->simple_post(ENDPOINT.'add_harga', $param, array(CURLOPT_BUFFERSIZE => 10)); 
     }
 
     // pake untuk list harga terkini
