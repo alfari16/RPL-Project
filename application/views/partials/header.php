@@ -97,6 +97,15 @@
                         </a>
                     </li>
                     <li class="menu-item root">
+                        <a class="menu-link" href="<?php echo base_url('log-aktivitas') ?>">
+                            <span class="icon fa fa-home">
+                            </span>
+                            <span class="title">
+                                Log Aktivitas
+                            </span>
+                        </a>
+                    </li>                    
+                    <li class="menu-item root">
                         <a class="menu-link" href="<?php echo base_url('register') ?>">
                             <span class="icon fa fa-user">
                             </span>

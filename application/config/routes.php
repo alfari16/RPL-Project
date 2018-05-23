@@ -11,7 +11,7 @@ $route['logout'] = 'UserController/logout';
 $route['log-aktivitas'] = 'ActivityController';
 $route['register'] = 'UserController/register';
 
-
+$route['test'] = 'BarangController/test';
 
 // ================================
 

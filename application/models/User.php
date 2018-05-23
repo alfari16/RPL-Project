@@ -31,7 +31,7 @@ class User extends CI_Model{
         
     }
 
-    public function new($param)
+    public function new_user($param)
     {
         $this->db->insert('user', $param['data']);
     }
