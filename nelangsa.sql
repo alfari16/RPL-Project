@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 22, 2018 at 04:44 PM
+-- Generation Time: May 24, 2018 at 04:09 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.5
 
@@ -41,11 +41,28 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kode_barang`, `nama_barang`, `satuan`, `stok`, `terakhir_diubah`) VALUES
-('AS476', 'Daging Super', '24000', '24', '2018-05-21 16:13:43'),
-('AS477', 'Daging Biasa', '150000', '15', '2018-05-21 16:13:43'),
-('pry', 'super', '12000', '13000', '2018-05-22 16:00:16'),
-('12yuyw', 'aihiashd', '12', '120', '2018-05-22 16:14:29'),
-('ts', 'bijaksana', '2,000', '10', '2018-05-22 16:42:20');
+('kaget', 'tidak kaget bos', '1091', '1090', '2018-05-24 16:03:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log`
+--
+
+CREATE TABLE `log` (
+  `id` int(5) NOT NULL,
+  `nama_event` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `log`
+--
+
+INSERT INTO `log` (`id`, `nama_event`, `tanggal`, `user`) VALUES
+(1, 'mengurangi barang', '2018-05-24 15:13:15', 'admin'),
+(2, 'menambah barang', '2018-05-24 15:13:15', 'admin');
 
 -- --------------------------------------------------------
 
@@ -114,10 +131,26 @@ INSERT INTO `user` (`username`, `password`, `nama_user`, `alamat_user`, `telp_us
 --
 
 --
+-- Indexes for table `log`
+--
+ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `log`
+--
+ALTER TABLE `log`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
