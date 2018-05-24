@@ -112,7 +112,7 @@
       methods: {
         fetchApi:function(){
           var vm = this;
-          fetch('http://f6a76499.ngrok.io/api/resources/dashboard')
+          fetch('http://localhost:8080/api/resources/dashboard')
             .then(function(res){return res.json();})
             .then(function(res){
               console.log(res);

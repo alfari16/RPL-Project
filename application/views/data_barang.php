@@ -215,20 +215,20 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form data-provide="validation" data-disable="false" action="" method='POST'>
+          <form data-provide="validation" data-disable="false" action="<?php echo base_url('transaksi/masuk') ?>" method='POST'>
             <div class="modal-body">
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require">Kode Barang</label>
                 <div class="col-8 col-lg-10">
                   <input type="hidden" class="form-control kode-barang" required>
-                  <input type="text" class="form-control kode-barang" disabled required>
+                  <input type="text" class="form-control kode-barang" name="kode_barang" required>
                   <div class="invalid-feedback"></div>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require">Jumlah Barang</label>
                 <div class="col-8 col-lg-10">
-                  <input type="number" class="form-control jumlah-barang currency" required id="pemasukan-input">
+                  <input type="number" class="form-control jumlah-barang currency" name="jumlah_barang" required id="pemasukan-input">
                   <div class="invalid-feedback"></div>
                 </div>
               </div>
@@ -253,20 +253,20 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form data-provide="validation" data-disable="false" action="" method='POST'>
+          <form data-provide="validation" data-disable="false" action="<?php echo base_url('transaksi/keluar') ?>" method='POST'>
             <div class="modal-body">
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require">Kode Barang</label>
                 <div class="col-8 col-lg-10">
-                  <input type="hidden" class="form-control kode-barang" required>
-                  <input type="text" class="form-control kode-barang" disabled required>
+                  <input type="hidden" class="form-control kode-barang"  required>
+                  <input type="text" class="form-control kode-barang" name="kode_barang" required>
                   <div class="invalid-feedback"></div>
                 </div>
               </div>
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require">Jumlah Barang</label>
                 <div class="col-8 col-lg-10">
-                  <input type="number" class="form-control jumlah-barang currency" required id="pengeluaran-input">
+                  <input type="number" class="form-control jumlah-barang currency" name="jumlah_barang" required id="pengeluaran-input">
                   <div class="invalid-feedback"></div>
                 </div>
               </div>

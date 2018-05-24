@@ -1,5 +1,6 @@
 <?php
 class Activity_model extends CI_Model{
+	
     public function insertLog($data){
         $this->db->insert('log',$data);
     }

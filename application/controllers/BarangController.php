@@ -8,8 +8,8 @@ class BarangController extends CI_Controller
     {
         parent::__construct();
 
-         $this->load->model('Barang_model');
-         define('ENDPOINT', 'http://f6a76499.ngrok.io/api/resources/');
+         $this->load->model(array('Barang_model','logs'));
+         define('ENDPOINT', 'http://localhost:8080/api/resources/');
 
     }
 
@@ -42,6 +42,13 @@ class BarangController extends CI_Controller
                   
                   // post barang
                   $api_result = $this->addBarang();
+                  $log_data = array(
+                        'nama_event'=>'Menambahkan Barang',
+                        'kode_barang'=>$input['kode_barang'],
+                        'username'=>$this->session->userdata('username'),
+                        'jumlah'=>$input['stok']
+                  );
+                  $this->logs->addLog($log_data);
 
                 } 
                 else $error="gagal";
@@ -53,7 +60,16 @@ class BarangController extends CI_Controller
     public function hapus(){
         $id = $this->input->post('modal_delete');
         $error = null;
-        if($this->Barang_model->hapus_data($id)) $error='berhasilhapus';
+        if($this->Barang_model->hapus_data($id)){
+            $error='berhasilhapus';
+            $log_data = array(
+                        'nama_event'=>'Menghapus Barang',
+                        'kode_barang'=>$id,
+                        'username'=>$this->session->userdata('username'),
+                        'jumlah'=>0
+                  );
+                  $this->logs->addLog($log_data);
+        }
         else $error="gagalhapus";
         redirect(base_url('manajemen-barang?result='.$error));
 
@@ -73,6 +89,13 @@ class BarangController extends CI_Controller
             $error='berhasiledit';
               //edit api
             $api_result = $this->editBarang();
+            $log_data = array(
+                        'nama_event'=>'Mengedit Barang',
+                        'kode_barang'=>$data['kode_barang'],
+                        'username'=>$this->session->userdata('username'),
+                        'jumlah'=>$data['stok']
+                  );
+                  $this->logs->addLog($log_data);
 
         } 
         else $error="gagaledit";
@@ -92,6 +115,7 @@ class BarangController extends CI_Controller
         echo $this->getHistoryHarga('DAY');
     }
 
+    
 
 
     ////////API/////////

@@ -36,4 +36,20 @@ Class Barang_model extends CI_Model
 		$this->db->where($this->id,$id);
 		return $this->db->update($this->nama_table,$data);
 	}
+
+	public function stok($data)
+	{
+		$st = $data['stok'] ;
+		$id = $data['kode_barang'];
+		$this->db->set("stok" , $st);
+		$this->db->where($this->id, $id);
+		return $this->db->update($this->nama_table);
+	}
+
+	public function getLastStok($kode)
+	{
+		$this->db->where($this->id, $kode);
+		$res = $this->db->get('barang');
+		return $res->row_array()['stok'];
+	}
 }

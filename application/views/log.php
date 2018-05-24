@@ -25,6 +25,8 @@
                     <th>Nama Event</th>
                     <th>Tanggal</th>
                     <th>Oleh</th>
+                    <th>Kode Barang</th>
+                    <th>Jumlah</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,7 +38,9 @@
                       <td scope="row"><?php echo $no++; ?></td>
                       <td><?php echo $list->nama_event; ?></td>
                       <td><?php echo $list->tanggal; ?></td>
-                      <td><?php echo $list->user; ?></td>
+                      <td><?php echo $list->username; ?></td>
+                      <td><?php echo $list->kode_barang; ?></td>
+                      <td><?php echo $list->jumlah; ?></td>
                     </tr>
                   <?php
                     }

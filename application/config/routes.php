@@ -10,6 +10,8 @@ $route['login']['post'] = 'UserController/setlogin';
 $route['logout'] = 'UserController/logout';
 $route['log-aktivitas'] = 'ActivityController';
 $route['register'] = 'UserController/register';
+$route['transaksi/(:any)'] = 'Operasi/transaksi/$1';
+
 
 $route['test'] = 'BarangController/test';
 
