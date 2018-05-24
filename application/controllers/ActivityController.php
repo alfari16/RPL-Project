@@ -12,6 +12,7 @@ class ActivityController extends CI_Controller{
             'data' => $this->Activity_model->getLog(),
             'title' => 'Log Aktivitas - Ayam Nelongso Admin'
         );
+        //test
         $this->load->view('partials/header');
         $this->load->view('log',$data);
     }
