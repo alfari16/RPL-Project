@@ -115,6 +115,7 @@
           fetch('http://f6a76499.ngrok.io/api/resources/dashboard')
             .then(function(res){return res.json();})
             .then(function(res){
+              console.log(res);
               vm.data=res;
               setTimeout(function(){
                 vm.getData();

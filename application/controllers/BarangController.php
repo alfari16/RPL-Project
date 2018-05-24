@@ -9,7 +9,7 @@ class BarangController extends CI_Controller
         parent::__construct();
 
          $this->load->model('Barang_model');
-         define('ENDPOINT', 'http://4e40c037.ngrok.io/api/resources/');
+         define('ENDPOINT', 'http://f6a76499.ngrok.io/api/resources/');
 
     }
 

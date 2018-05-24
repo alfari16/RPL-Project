@@ -1,4 +1,10 @@
-
+  <header class="topbar justify-center">
+      <div class="text-center">
+          <h1 style="margin-bottom:0">
+              Manajemen Barang
+          </h1>
+      </div>
+  </header>
     <!-- Main container -->
     <main class="main-container" id="app">
       <div class="main-content">
