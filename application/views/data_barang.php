@@ -34,7 +34,8 @@
                     <th>Harga</th>
                     <th>Jumlah</th>
                     <th>Terakhir diperbarui</th>
-                    <th>Aksi</th>
+                    <th class="text-center">Pemasukan/Pengeluaran</th>
+                    <th class="text-center">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,11 +51,19 @@
                     <td class="td-harga-barang"><?php echo $value->satuan; ?></td>
                     <td class="td-jumlah-barang"><?php echo $value->stok; ?></td>
                     <td><?php echo $value->terakhir_diubah; ?></td>
-                     <td class=" table-actions">
-                      <a class="table-action" href="<?php echo site_url('barangcontroller/update/'.$value->kode_barang); ?>" title="Kelola" data-toggle="modal" data-target="#modal-edit">
+                    <td class="text-center">
+                      <a class="table-action operation" href="#" title="Pemasukan" data-toggle="modal" data-target="#modal-pemasukan">
+                        <i class="ti-plus"></i>
+                      </a>
+                      <a class="table-action operation" href="#" title="Pengeluaran" data-toggle="modal" data-target="#modal-pengeluaran">
+                        <i class="ti-minus"></i>
+                      </a>
+                    </td>
+                     <td class="text-center table-actions">
+                      <a class="table-action" href="#" title="Kelola" data-toggle="modal" data-target="#modal-edit">
                         <i class="ti-pencil"></i>
                       </a>
-                      <a class="table-action" href="<?php echo site_url('barangcontroller/hapus/'.$value->kode_barang); ?>" title="Hapus" data-toggle="modal" data-target="#delete-modal">
+                      <a class="table-action" href="#" title="Hapus" data-toggle="modal" data-target="#delete-modal">
                         <i class="ti-trash"></i>
                       </a>
                     </td>
@@ -111,7 +120,8 @@
               </div>
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require" for="input-2">Harga Barang</label>
-                <div class="col-8 col-lg-10">
+                <div class="col-8 col-lg-10 flex-container align-center">
+                  <p class="floating-left no-space mr-3">Rp</p>
                   <input type="text" class="form-control currency" id="input-4" name="satuan" required>
                   <div class="invalid-feedback"></div>
                 </div>
@@ -119,7 +129,7 @@
               <div class="form-group row">
                 <label class="col-4 col-lg-2 col-form-label require" for="input3">Jumlah Barang</label>
                 <div class="col-8 col-lg-10 flex-container align-center">
-                  <p class="floating-left no-space mr-3">Rp</p>
+                  <p class="floating-left no-space mr-3">pcs</p>
                   <input type="text" class="form-control currency" id="input3" required placeholder="" name="stok" required>
                   <div class="invalid-feedback"></div>
                 </div>
@@ -189,6 +199,82 @@
     </div>
     <!-- Modal Edit Barang End -->
 
+    <!-- Modal Pemasukan Start -->
+    <div class="modal fade" id="modal-pemasukan" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Pemasukan</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form data-provide="validation" data-disable="false" action="" method='POST'>
+            <div class="modal-body">
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require">Kode Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="hidden" class="form-control kode-barang" required>
+                  <input type="text" class="form-control kode-barang" disabled required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require">Jumlah Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="number" class="form-control jumlah-barang currency" required id="pemasukan-input">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Batal</button>
+              <button class="btn btn-primary" type="submit"><?php echo $button; ?></button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Pemasukan End -->
+    
+    <!-- Modal Pengeluaran Start -->
+    <div class="modal fade" id="modal-pengeluaran" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Pengeluaran</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form data-provide="validation" data-disable="false" action="" method='POST'>
+            <div class="modal-body">
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require">Kode Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="hidden" class="form-control kode-barang" required>
+                  <input type="text" class="form-control kode-barang" disabled required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-4 col-lg-2 col-form-label require">Jumlah Barang</label>
+                <div class="col-8 col-lg-10">
+                  <input type="number" class="form-control jumlah-barang currency" required id="pengeluaran-input">
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-bold btn-pure btn-secondary" data-dismiss="modal">Batal</button>
+              <button class="btn btn-primary" type="submit"><?php echo $button; ?></button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Pengeluaran End -->
+
     <!-- Modal Action Delete Start-->
     <div class="modal fade" id="delete-modal" tabindex="-1">
       <div class="modal-dialog modal-sm">
@@ -226,16 +312,6 @@
     <script>
       var url = location.href;
       if(url.includes('#tambahbarang')) $('#tambah-barang').click();
-      $('.currency').on('input',function(e){
-        if(e.which<48||e.which>57) e.preventDefault();
-        var value = $(this).val().split('').filter(function (el) { return el !== ',' }).reverse();
-        var temp = '';
-        value.forEach((element,idx) => {
-          if((idx)%3==0 && idx>0) temp+=',';
-          temp+=element;
-        });
-        $(this).val(temp.split('').reverse().join(''));
-      });
       $('[data-target="#delete-modal"]').click(function(e){
         var data = $(this).closest('tr');
         var modal = $('#delete-modal');
@@ -252,6 +328,20 @@
         modal.find('.nama-barang').val(data.find('.td-nama-barang').text());
         modal.find('.jumlah-barang').val(data.find('.td-jumlah-barang').text());
         modal.find('.harga-barang').val(data.find('.td-harga-barang').text());
+      });
+      $('[data-target="#modal-pemasukan"]').click(function(e){
+        var data = $(this).closest('tr');
+        var modal = $('#modal-pemasukan');
+        modal.find('#pemasukan-input').prop('min',data.find('.td-jumlah-barang').text());
+        modal.find('.kode-barang').val(data.find('.td-kode-barang').text());
+        modal.find('.jumlah-barang').val(data.find('.td-jumlah-barang').text());
+      });
+      $('[data-target="#modal-pengeluaran"]').click(function(e){
+        var data = $(this).closest('tr');
+        var modal = $('#modal-pengeluaran');
+        modal.find('#pengeluaran-input').prop('max',data.find('.td-jumlah-barang').text());
+        modal.find('.kode-barang').val(data.find('.td-kode-barang').text());
+        modal.find('.jumlah-barang').val(data.find('.td-jumlah-barang').text());
       });
       $('#cari-input').keyup(function(e){
         var value = $(this).val().toLowerCase();

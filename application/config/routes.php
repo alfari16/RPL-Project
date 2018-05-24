@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'BarangController/index';
+$route['default_controller'] = 'Dashboard';
 
 $route['manajemen-barang'] = 'BarangController';
 $route['login']['get'] = 'UserController/login';

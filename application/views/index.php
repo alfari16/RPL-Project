@@ -188,14 +188,16 @@
     });
   </script>
   <?php 
-    $sukses = $_GET['sukses'] or null;
-    switch ($sukses) {
-      case 'tambahuser':
-        echo "<script>alert(\"Berhasil menambah admin!\");</script>";
-        break;
-      
-      default:
-        break;
+    if(isset($_GET['sukses'])){
+      $sukses = $_GET['sukses'] or null;
+      switch ($sukses) {
+        case 'tambahuser':
+          echo "<script>alert(\"Berhasil menambah admin!\");</script>";
+          break;
+        
+        default:
+          break;
+      }
     }
     ?>
 </body>

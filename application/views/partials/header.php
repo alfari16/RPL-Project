@@ -87,7 +87,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item root">
+                    <li class="menu-item root" id="log-aktivitas">
                         <a class="menu-link" href="<?php echo base_url('log-aktivitas') ?>">
                             <span class="icon fa fa-home">
                             </span>
@@ -97,7 +97,7 @@
                         </a>
                     </li>
                     
-                    <li class="menu-item root">
+                    <li class="menu-item root" id="tambah-admin">
                         <a class="menu-link" href="<?php echo base_url('register') ?>">
                             <span class="icon fa fa-user">
                             </span>
@@ -115,15 +115,16 @@
         <!-- Topbar -->
         <script>
             var base="<?php echo base_url();?>";
+            console.log(base);
             var link = location.href.toString().replace(base,'');
             var index=true
             $('.menu-item.root').each(function(idx,val){
                 var text=$(this).prop('id').toString().replace(base,'');
-                if(link.indexOf(text)>0) {
+                if(link === text) {
+                    console.log('test true');
                     $(this).addClass('active')
                     index=false
                 }
             });
             if(index) $('.menu-item.root').eq(0).addClass('active');
-            //test
         </script>
