@@ -13,16 +13,6 @@
     <main class="main-container" id="app">
       <div class="main-content">
         <div class="">
-          <div class="row mb-3">
-            <div class="col-md-4">
-              <label for="date-from">Dari Tanggal</label>
-              <input type="text" class="form-control" data-provide="datepicker" data-date-today-highlight="true" id="date-from" value="01/01/2017">
-            </div>
-            <div class="col-md-4">
-              <label for="date-from">Sampai Tanggal</label>
-              <input type="text" class="form-control" data-provide="datepicker" data-date-today-highlight="true" id="date-to" value="05/16/2017">
-            </div>
-          </div>
           <div class="card">
             <h4 class="card-title">
               <strong>Log Aktivitas</strong>

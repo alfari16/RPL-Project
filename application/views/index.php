@@ -10,16 +10,6 @@
   <main class="main-container" id="app">
     <div class="main-content">
       <div class="row">
-        <div class="col-md-12 row mb-3">
-          <div class="col-md-4">
-            <label for="date-from">Dari Tanggal</label>
-            <input type="text" class="form-control" data-provide="datepicker" data-date-today-highlight="true" id="date-from" v-model="dateFrom">
-          </div>
-          <div class="col-md-4">
-            <label for="date-from">Sampai Tanggal</label>
-            <input type="text" class="form-control" data-provide="datepicker" data-date-today-highlight="true" id="date-to" v-model="dateTo">
-          </div>
-        </div>
         <div class="col-md-8">
           <div class="card">
             <div class="card-header">
