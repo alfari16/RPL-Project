@@ -41,13 +41,13 @@ class BarangController extends CI_Controller
                   $error="berhasil";
                   
                   // post barang
-                  $api_result = $this->postBarang();
+                  $api_result = $this->addBarang();
 
                 } 
                 else $error="gagal";
             }
         }
-        redirect(base_url('manajemen-barang?result='.$error.'&api_result='.api_result));
+        redirect(base_url('manajemen-barang?result='.$error.'&api_result='.$api_result));
     }
 
     public function hapus(){
@@ -68,9 +68,15 @@ class BarangController extends CI_Controller
             'stok' => $input['edit-stok']
         );
         $error = null;
-        if($this->Barang_model->edit_data($data)) $error='berhasiledit';
+        $api_result = null;
+        if($this->Barang_model->edit_data($data)){
+            $error='berhasiledit';
+              //edit api
+            $api_result = $this->editBarang();
+
+        } 
         else $error="gagaledit";
-        redirect(base_url('manajemen-barang?result='.$error));
+        redirect(base_url('manajemen-barang?result='.$error.'&api_result='.$api_result));
     }
 
     public function validate_user()
@@ -90,53 +96,39 @@ class BarangController extends CI_Controller
 
     ////////API/////////
 
-    /*
-    pake untuk nambah barang di log harga
-    */
-    private function postBarang(){
+   
+    // pake untuk nambah barang
+    private function addBarang(){
         $this->load->library('curl');
         $param = array(
             'kode'=> $this->input->post('kode_barang'),
             'nama'=> $this->input->post('nama_barang'),
-            'satuan'=> $this->input->post('satuan')
+            'jumlah'=> $this->input->post('stok'),
+            'harga'=> $this->input->post('satuan')
         );
         return $this->curl->simple_post(ENDPOINT.'add_barang', $param, array(CURLOPT_BUFFERSIZE => 10)); 
     }
-    // pake untuk nambah harga
-    private function postHarga(){
+
+    // pake untuk edit barang
+    private function editBarang(){
         $this->load->library('curl');
+
         $param = array(
-            'kode'=> $this->input->post('kode_barang'),
-            'harga'=> $this->input->post('harga_barang')
+            'kode'=> $this->input->post('edit-kode-barang'),
+            'nama'=> $this->input->post('edit-nama-barang'),
+            'jumlah'=> $this->input->post('edit-stok'),
+            'harga'=> $this->input->post('edit-satuan')
         );
-        return $this->curl->simple_post(ENDPOINT.'add_harga', $param, array(CURLOPT_BUFFERSIZE => 10)); 
+
+        return $this->curl->simple_post(ENDPOINT.'edit_barang', $param, array(CURLOPT_BUFFERSIZE => 10)); 
     }
 
     // pake untuk list harga terkini
     // return json
-    private function getHargaBarang(){
+    private function getBarang(){
         $this->load->library('curl');
-        return $this->curl->simple_get(ENDPOINT . 'cur_harga');
+        return $this->curl->simple_get(ENDPOINT . 'dashboard');
     }
-
-    // pake untuk harga terkini suatu barang
-    // return json
-    private function getSingleHargaBarang($kode){
-        $this->load->library('curl');
-        $param = array('kode_barang'=>$kode);
-        return $this->curl->simple_get(ENDPOINT . 'cur_harga?'.http_build_query($param));
-    }
-
-    // pake untuk list history harga barang 
-    // required kode barang
-    // return json
-    private function getHistoryHarga($kode){
-        $this->load->library('curl');
-        $param = array('kode_barang'=>$kode);
-        return $this->curl->simple_get(ENDPOINT . 'history_harga?'.http_build_query($param));
-    }
-
-
 
 
 
