@@ -14,7 +14,7 @@
           <div class="card">
             <div class="card-header">
               <h5 class="card-title">
-                <strong>Pengeluaran</strong>
+                <strong>Jumlah Barang</strong>
               </h5>
             </div>
             <div class="card-body">
@@ -26,7 +26,7 @@
               <div class="card">
                 <div class="card-header">
                   <h5 class="card-title">
-                    <strong>Pengeluaran</strong>
+                    <strong>Pemasukan</strong>
                   </h5>
                 </div>
                 <div class="card-body">
@@ -56,34 +56,15 @@
                 <span class="fw-400">Total Persediaan Barang</span>
                 <span>
                   <i class="ti-angle-up text-success"></i>
-                  <span class="fs-18 ml-1">113</span>
+                  <span class="fs-18 ml-1">{{totalCount}}</span>
                 </span>
               </div>
             </div>
           </div>
-          <div class="card card-body card-ex">
-            <i class="icon-dash fa fa-money absolute"></i>
-            <div>
-              <div class="text-right">
-                <span class="fw-400">Anggaran</span>
-                <span>
-                  <i class="ti-angle-up text-success"></i>
-                  <span class="fs-18 ml-1">113</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="card card-body card-ex">
-            <i class="icon-dash fa fa-braille absolute"></i>
-            <div>
-              <div class="text-right">
-                <span class="fw-400">Jenis Barang</span>
-                <span>
-                  <i class="ti-angle-up text-success"></i>
-                  <span class="fs-18 ml-1">113</span>
-                </span>
-              </div>
-            </div>
+          <label>Harga</label>
+          <div class="flex-container align-center harga-container" v-for="list in data">
+            <div class="left">{{list.nama}}</div>
+            <div class="right">Rp {{list.harga}}</div>
           </div>
         </div>
       </div>
@@ -118,36 +99,96 @@
     new Vue({
       el: '#app',
       data: {
-        dateFrom: '01/01/2017',
-        dateTo: month+'/'+ today + '/' +year
+        data : [
+          {
+            nama:"Cabe",
+            jumlah:0,
+            kode:'string',
+            harga:0,
+          },
+          {
+            nama:"Tempe",
+            jumlah:6000,
+            kode:'string',
+            harga:6000,
+          },
+          {
+            nama:"Ayam",
+            jumlah:8000,
+            kode:'string',
+            harga:8000,
+          },
+          {
+            nama:"Bawang",
+            jumlah:5000,
+            kode:'string',
+            harga:5000,
+          }
+        ]
       },
-      mounted: function () {
-        this.getData();
-      },
-      watch: {
-        dateFrom: function (val) {
-          console.log(val);
+      computed:{
+        totalCount:function(){
+          var total = 0;
+          this.data.forEach(function(element){
+            total+=element.jumlah
+          });
+          return total;
         }
       },
+      created: function(){
+        console.log('test create');
+        this.fetchApi();
+      },
+      mounted:function(){
+        this.getData();
+      },
       methods: {
+        fetchApi:function(){
+          var vm = this;
+          fetch('http://f6a76499.ngrok.io/api/resources/cur_harga')
+            .then(function(res){return res.json();})
+            .then(function(res){
+              var data = res;
+              console.log(data);
+              //vm.getData();
+            });
+        },
+        getDataByKey:function(key){
+          return this.data.map(function(ele){
+            return ele[key];
+          })
+        },
         getData:function() {
+          var vm = this;
           app.ready(function () {
             $('#chat-content').scrollToEnd();
             var chartjs2 = new Chart($("#chart-js-2"), {
-              type: 'line',
+              type: 'bar',
               data: {
-                labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                labels: vm.getDataByKey('nama'),
                 datasets: [
                   {
-                    label: "Barang Masuk",
+                    label: "Jumlah Barang",
                     backgroundColor: "rgb(51,202,185)",
-                    data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+                    data: vm.getDataByKey('jumlah')
                   },
                 ]
               },
+              options: {
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    callbacks: {
+                      label: function(tooltipItem) {
+                              return tooltipItem.yLabel;
+                      }
+                    }
+                }
+              }
             });
             var chartjs3 = new Chart($("#chart-js-3"), {
-              type: 'bar',
+              type: 'line',
               data: {
                 labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
                 datasets: [
@@ -165,7 +206,7 @@
                 labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
                 datasets: [
                   {
-                    label: "Barang Masuk",
+                    label: "Barang Keluar",
                     backgroundColor: "#FFCDD2",
                     data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
                   },

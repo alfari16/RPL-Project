@@ -85,3 +85,12 @@
 	border: 1px solid #eee;
 	padding: 5px;
 }
+.harga-container {
+	background-color: white;
+	justify-content: space-between;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+.harga-container .right {
+	font-weight: 600;
+}
