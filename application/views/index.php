@@ -10,7 +10,7 @@
   <main class="main-container" id="app">
     <div class="main-content">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <h5 class="card-title">
@@ -21,34 +21,8 @@
                 <canvas id="chart-js-2" height="100px" data-provide="chartjs"></canvas>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title">
-                    <strong>Pemasukan</strong>
-                  </h5>
-                </div>
-                <div class="card-body">
-                    <canvas id="chart-js-3" data-provide="chartjs"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title">
-                    <strong>Pengeluaran</strong>
-                  </h5>
-                </div>
-                <div class="card-body">
-                    <canvas id="chart-js-4" data-provide="chartjs"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-12">
           <div class="card card-body card-ex">
             <i class="icon-dash fa fa-bars absolute"></i>
             <div>
