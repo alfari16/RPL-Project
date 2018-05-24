@@ -28,24 +28,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td class="td-kode-barang">Menambah Jenis Barang</td>
-                    <td class="td-nama-barang">12 April 2018</td>
-                    <td class="td-harga-barang">admin</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td class="td-kode-barang">Mengurangi Stock Barang</td>
-                    <td class="td-nama-barang">12 April 2018</td>
-                    <td class="td-harga-barang">bos</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">3</td>
-                    <td class="td-kode-barang">Menginput Barang</td>
-                    <td class="td-nama-barang">12 April 2018</td>
-                    <td class="td-harga-barang">Sarah</td>
-                  </tr>
+                  <?php 
+                    $no = 1;
+                    foreach ($data as $list) {
+                  ?>
+                    <tr>
+                      <td scope="row"><?php echo $no++; ?></td>
+                      <td><?php echo $list->nama_event; ?></td>
+                      <td><?php echo $list->tanggal; ?></td>
+                      <td><?php echo $list->user; ?></td>
+                    </tr>
+                  <?php
+                    }
+                  ?>
                 </tbody>
               </table>
         

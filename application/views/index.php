@@ -18,7 +18,7 @@
               </h5>
             </div>
             <div class="card-body">
-              <canvas id="chart-js-2" height="100px" data-provide="chartjs"></canvas>
+                <canvas id="chart-js-2" height="100px" data-provide="chartjs"></canvas>
             </div>
           </div>
           <div class="row">
@@ -30,7 +30,7 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <canvas id="chart-js-3" data-provide="chartjs"></canvas>
+                    <canvas id="chart-js-3" data-provide="chartjs"></canvas>
                 </div>
               </div>
             </div>
@@ -42,7 +42,7 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <canvas id="chart-js-4" data-provide="chartjs"></canvas>
+                    <canvas id="chart-js-4" data-provide="chartjs"></canvas>
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
 
 
   <!-- Global quickview -->
-  <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+  <div id="qv-global"  data-url="assets/data/quickview-global.html">
     <div class="spinner-linear">
       <div class="line"></div>
     </div>
@@ -91,40 +91,11 @@
   <script src="<?php echo base_url('resources/');?>assets/js/app.min.js"></script>
   <script src="<?php echo base_url('resources/');?>assets/vendor/vuejs/vue.js"></script>
   <script>
-    var currentDate = new Date(),
-        today = currentDate.getDay()+1,
-        month = currentDate.getMonth()+1,
-        year = currentDate.getFullYear();
-
-    new Vue({
+    var vue = new Vue({
       el: '#app',
       data: {
-        data : [
-          {
-            nama:"Cabe",
-            jumlah:0,
-            kode:'string',
-            harga:0,
-          },
-          {
-            nama:"Tempe",
-            jumlah:6000,
-            kode:'string',
-            harga:6000,
-          },
-          {
-            nama:"Ayam",
-            jumlah:8000,
-            kode:'string',
-            harga:8000,
-          },
-          {
-            nama:"Bawang",
-            jumlah:5000,
-            kode:'string',
-            harga:5000,
-          }
-        ]
+        loading:true,
+        data : []
       },
       computed:{
         totalCount:function(){
@@ -136,22 +107,20 @@
         }
       },
       created: function(){
-        console.log('test create');
         this.fetchApi();
-      },
-      mounted:function(){
-        this.getData();
       },
       methods: {
         fetchApi:function(){
           var vm = this;
-          fetch('http://f6a76499.ngrok.io/api/resources/cur_harga')
+          fetch('http://f6a76499.ngrok.io/api/resources/dashboard')
             .then(function(res){return res.json();})
             .then(function(res){
-              var data = res;
-              console.log(data);
-              //vm.getData();
-            });
+              vm.data=res;
+              setTimeout(function(){
+                vm.getData();
+              }, 500);
+            })
+            .catch(function(res){console.log(res);});
         },
         getDataByKey:function(key){
           return this.data.map(function(ele){
@@ -160,7 +129,6 @@
         },
         getData:function() {
           var vm = this;
-          app.ready(function () {
             $('#chat-content').scrollToEnd();
             var chartjs2 = new Chart($("#chart-js-2"), {
               type: 'bar',
@@ -213,9 +181,11 @@
                 ]
               },
             });
-          });
         }
       }
+    });
+    app.ready(function () {
+      vue();
     });
   </script>
   <?php 
